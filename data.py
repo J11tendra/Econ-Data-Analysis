@@ -21,7 +21,6 @@ df = pd.DataFrame({
     'Interest Rates': interest_rates
 })
 df.dropna(inplace=True)
-
 df.index = pd.to_datetime(df.index)
 
 # Normalize data for better visualization
@@ -39,7 +38,7 @@ plt.show()
 
 # Correlation heatmap
 plt.figure(figsize=(8, 5))
-sns.heatmap(df.corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+sns.heatmap(df.corr().round(2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
 plt.title('Correlation Between Economic Indicators')
 plt.show()
 
